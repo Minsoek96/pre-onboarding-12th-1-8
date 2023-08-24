@@ -1,11 +1,6 @@
 import React, { useReducer, useEffect, useState, useMemo } from "react";
 import { reducer } from "../reducer/TodoReducer";
-import {
-  createTodos,
-  deleteTodos,
-  getTodos,
-  updateTodos,
-} from "../api/todo/todos";
+import { createTodos, deleteTodos, getTodos, updateTodos } from "../api/todos";
 
 export const TodoStateContext = React.createContext([]);
 export const TodoDispatchContext = React.createContext({
