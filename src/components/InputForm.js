@@ -1,5 +1,5 @@
-import Button from "./Button";
-import { useInput } from '../hooks/useInput';
+import { useInput } from "../hooks/useInput";
+import SignButton from "./SignButton";
 const emailValidate = (target) => target.includes("@");
 const pwValidate = (target) => target.trim().length >= 8;
 const InputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
@@ -24,7 +24,7 @@ const InputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
     }
     onSuccessSubmitEvent({ email: emailValue, password: pwValue });
   };
-  console.log(emailIsInValid,pwIsInValid)
+
   return (
     <form onSubmit={submitEventHandler}>
       <input
@@ -32,22 +32,23 @@ const InputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
         type="text"
         value={emailValue}
         onChange={onChangeEmailInput}
-        onBlur={() => setEmailIsFocused(true)}></input>
+        onBlur={() => setEmailIsFocused(true)}
+      ></input>
       {emailIsInValid && <em>이메일을 확인하세요</em>}
       <input
         data-testid="password-input"
         type="password"
         value={pwValue}
         onChange={onChangePwInput}
-        onBlur={() => setPwIsFocused(true)}></input>
+        onBlur={() => setPwIsFocused(true)}
+      ></input>
       {pwIsInValid && <em>비밀번호를 확인하세요</em>}
-      <Button
-        content={buttonContent}
-        disabled={!emailValidate(emailValue) || !pwValidate(pwValue)}
+      <SignButton
+        text={buttonContent}
+        isValid={emailValidate(emailValue) && pwValidate(pwValue)}
         data-testid={buttonId}
       />
     </form>
   );
 };
 export default InputForm;
-

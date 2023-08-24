@@ -10,17 +10,17 @@ export const Auth = ({ children }) => {
     switch (pathname) {
       case "/signin":
       case "/signup":
-      // if (window.localStorage.getItem("accessToken")) {
-      //   navigation("/todo");
-      //   break;
-      // }
-      // break;
+        if (window.localStorage.getItem("access_token")) {
+          navigation("/todo");
+          break;
+        }
+        break;
       case "/todo":
-      // if (!window.localStorage.getItem("accessToken")) {
-      //   navigation("/signin");
-      //   break;
-      // }
-      // break;
+        if (!window.localStorage.getItem("access_token")) {
+          navigation("/signin");
+          break;
+        }
+        break;
       default:
         break;
     }
