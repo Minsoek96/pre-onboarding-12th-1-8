@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL, ACCESS_TOKEN_KEY } from "./constants/api_routes";
+import { BASE_URL, ACCESS_TOKEN_KEY } from "../constants/constants";
 const createAxiosInstance = (url, headers = {}) => {
   const instance = axios.create({ baseURL: url, ...headers });
   return instance;
