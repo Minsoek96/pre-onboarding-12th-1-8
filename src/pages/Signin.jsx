@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import InputForm from "../components/InputForm";
+import AuthInputForm from "../components/AuthInputForm";
 import { signInMethod } from "../api/auth/signInMethod";
 import { setAccessToken } from "../utils/localStorage";
 export const Signin = () => {
@@ -15,7 +15,7 @@ export const Signin = () => {
   };
   return (
     <>
-      <InputForm
+      <AuthInputForm
         buttonContent="로그인"
         buttonId="signin-button"
         onSuccessSubmitEvent={post}

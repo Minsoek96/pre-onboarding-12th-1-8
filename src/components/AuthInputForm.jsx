@@ -2,7 +2,7 @@ import { useInput } from "../hooks/useInput";
 import SignButton from "./SignButton";
 const emailValidate = (target) => target.includes("@");
 const pwValidate = (target) => target.trim().length >= 8;
-const InputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
+const AuthInputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
   const {
     value: emailValue,
     onChange: onChangeEmailInput,
@@ -33,7 +33,7 @@ const InputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
         value={emailValue}
         onChange={onChangeEmailInput}
         onBlur={() => setEmailIsFocused(true)}
-      ></input>
+      />
       {emailIsInValid && <em>이메일을 확인하세요</em>}
       <input
         data-testid="password-input"
@@ -41,7 +41,7 @@ const InputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
         value={pwValue}
         onChange={onChangePwInput}
         onBlur={() => setPwIsFocused(true)}
-      ></input>
+      />
       {pwIsInValid && <em>비밀번호를 확인하세요</em>}
       <SignButton
         text={buttonContent}
@@ -51,4 +51,4 @@ const InputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
     </form>
   );
 };
-export default InputForm;
+export default AuthInputForm;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Input = styled.input`
+const TodoInput = styled.input`
   height: 22px;
   width: 250px;
   padding: 15px 32px;
@@ -10,4 +10,4 @@ const Input = styled.input`
   margin: 4px 2px;
 `;
 
-export default Input;
+export default TodoInput;

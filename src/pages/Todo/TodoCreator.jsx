@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { TodoDispatchContext } from "../../context/TodoContext";
 import SignButton from "../../components/SignButton";
-import Input from "../../components/Input";
+import TodoInput from "../../components/TodoInput";
 
 const TodoCreatorStyle = styled.div`
   display: flex;
@@ -27,7 +27,7 @@ const TodoCreator = () => {
   return (
     <TodoCreatorStyle>
       <label htmlFor="new-todo-input"></label>
-      <Input
+      <TodoInput
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
         ref={todoRef}

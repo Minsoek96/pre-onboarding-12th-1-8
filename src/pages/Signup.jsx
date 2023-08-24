@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { signUpMethod } from "../api/auth/signupMethod";
-import InputForm from "../components/InputForm";
+import AuthInputForm from "../components/AuthInputForm";
 export const Signup = () => {
   const navigate = useNavigate();
   const signUpHandler = async (data) => {
@@ -16,7 +16,7 @@ export const Signup = () => {
   };
   return (
     <>
-      <InputForm
+      <AuthInputForm
         buttonContent="회원가입"
         buttonId="signup-button"
         onSuccessSubmitEvent={signUpHandler}
