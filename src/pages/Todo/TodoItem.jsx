@@ -78,7 +78,7 @@ const TodoItem = ({ id, todo, isCompleted }) => {
   const handleDeleteTodo = () => {
     if (isEditing) {
       setIsEditing(false);
-      setContents("");
+      setContents(todo);
       return;
     }
     onDelete(id);
