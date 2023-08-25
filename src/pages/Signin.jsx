@@ -1,12 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import AuthInputForm from "../components/AuthInputForm";
-import { signInMethod } from "../api/auth/signInMethod";
+import { signIn } from "../api/auth";
 import { setAccessToken } from "../utils/localStorage";
 export const Signin = () => {
   const navigate = useNavigate();
   const post = async (data) => {
     try {
-      const res = await signInMethod(data);
+      const res = await signIn(data);
       setAccessToken(res.data.access_token);
       navigate("/todo");
     } catch (e) {
