@@ -9,14 +9,12 @@
 https://pre-onboarding-12th-1-8.vercel.app/
 
 ## 실행 방법
-- `git clone https://github.com/fghman/pre-onboarding-12th-1-8.git` : 프로젝트 내려받기
-- `cd wanted-pre-onboarding-12th-1-8` : 디렉터리 이동
+- `git clone https://github.com/fghman/pre-onboarding-12th-1-8.git ./` : 프로젝트 내려받기
 - `npm install` : 패키지 설치
 - `npm start` : 애플리케이션 실행 (브라우저가 자동으로 실행되어 홈페이지로 이동합니다.)
 
 ## 프로젝트 디렉토리 설명:
 - `src / api`: api 요청 함수 관리
-- `src / constants`: API URL 등의 상수 관리
 - `src / context`: 투두 관련 컴포넌트에서 공통적으로 사용되는 데이터, 함수 관리
 - `src / hooks`: 커스텀 훅 관리
 - `src / pages`: 페이지를 렌더링하는 컴포넌트 관리
@@ -25,7 +23,7 @@ https://pre-onboarding-12th-1-8.vercel.app/
 
 ## 구현 사항
 - API와 함수, Hooks를 컴포넌트 파일 내에 정의하지 않고 각각 분리하여 재사용성을 높임
-- axios 인스턴스를 분리해서 사용함
+- axios 인스턴스를 생성함으로써 서버 요청시 공통적으로 적용되는 로직을 한 파일에서 관리하여 추후 axios 요청 로직 수정 시 유지보수면에서 용이하도록 함
 - JWT 토큰을 사용한 로그인, 회원가입 로직 개발
   - 회원가입과 로그인 페이지에서 공통적으로 사용되는 UI를 AuthInputForm.jsx 컴포넌트 1개로 통합하여 유지보수가 용이함
   - 회원가입, 로그인 폼 작성 시 이메일 조건, 비밀번호 조건 등의 유효성 검사
@@ -44,8 +42,8 @@ https://pre-onboarding-12th-1-8.vercel.app/
   - 취소버튼을 누르면 수정한 내용을 초기화하고 수정모드 비활성화
   - 체크박스 체크를 통한 Todo 완료 여부 구현
   - 삭제 버튼을 눌러 Todo 삭제 기능 구현
-  - 서버 요청 로직을 뷰 컴포넌트로부터 분리하여 컨텍스트에서 관리함으로서 유지보수 측면에서 용이
-  - reducer를 사용해서 특정 로직이 어떤 타입인지 쉽게 파악할 수 있음
+  - 서버 요청 로직을 뷰 컴포넌트로부터 분리하여 컨텍스트에서 관리함으로서 관심사 분리를 통한 유지보수 측면 용이
+  - reducer를 사용하여 상태 업데이트의 의도를 쉽게 파악할 수 있으며 추후 해당 리듀서를 다른 컴포넌트에서도 재활용할 수 있는 장점이 있음
  
 ## Tech Stack
 
