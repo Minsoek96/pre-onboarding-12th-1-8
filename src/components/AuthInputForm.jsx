@@ -46,7 +46,7 @@ const AuthInputForm = ({ buttonContent, buttonId, onSuccessSubmitEvent }) => {
       <SignButton
         text={buttonContent}
         isValid={emailValidate(emailValue) && pwValidate(pwValue)}
-        data-testid={buttonId}
+        id={buttonId}
       />
     </form>
   );
